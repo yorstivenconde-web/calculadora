@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #e9e6f7, #f5f4fb);
+}
+
+.calculadora {
+  width: 340px;
+  padding: 20px;
+  border-radius: 28px;
+  background: #efeef9;
+  box-shadow: 0 20px 40px rgba(80, 60, 150, 0.15);
+  animation: aparecer 0.5s ease-out;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.pantalla {
+  background: #1b2233;
+  border-radius: 18px;
+  padding: 25px 20px 15px;
+  margin-bottom: 16px;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  transition: box-shadow 0.3s ease;
+}
+
+.pantalla.error {
+  animation: vibrar 0.4s ease;
+}
+
+@keyframes vibrar {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+.historial {
+  color: #7d8aa8;
+  font-size: 14px;
+  min-height: 18px;
+}
+
+.resultado {
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#valor {
+  display: inline-block;
+  animation: entrarValor 0.2s ease;
+}
+
+@keyframes entrarValor {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 16px;
+  background: #dedcf3;
+  color: #2b2740;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 18px 0;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  background: #cfccec;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(35, 90, 42, 0.849);
+}
+
+.btn:active {
+  transform: scale(0.92);
+  background: #c3bfe8;
+  box-shadow: none;
+}
+
+/* Resaltado genérico al usar el teclado (para botones que no son operador) */
+.btn.activo {
+  transform: scale(0.92);
+  background: #c3bfe8;
+  box-shadow: none;
+}
+
+.btn-accion {
+  background: var(--color-btn-accion, #dedcf3);
+  color:#1a6b4a;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.btn-accion:hover {
+  background: #dad9e6;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09);
+}
+
+.btn-operador {
+  background: var(--color-btn-operador, #2d7a5f);
+  color: var(--color-texto-claro, #ffffff);
+  font-size: 1.2rem;
+  box-shadow: 0 4px 14px rgba(45, 122, 95, 0.3);
+}
+
+.btn-operador:hover {
+  background: #358f70;
+  box-shadow: 0 6px 20px rgba(45, 122, 95, 0.4);
+}
+
+.btn-operador.activo {
+  background: #1a2e28;
+  box-shadow: 0 4px 18px rgba(26, 46, 40, 0.4);
+}
+
+.btn-igual {
+  background: var(--color-btn-igual, #1a2e28);
+  color: var(--color-texto-claro, #ffffff);
+  font-size: 1.5rem;
+  box-shadow: 0 4px 16px rgba(26, 46, 40, 0.25);
+}
+
+.btn-igual:hover {
+  background: #2a4a3e;
+  box-shadow: 0 6px 22px rgba(26, 46, 40, 0.35);
+}
+
+.btn-igual.activo {
+  background: #2a4a3e;
+  box-shadow: 0 4px 18px rgba(26, 46, 40, 0.4);
+}
+
+.btn-cero {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 24px;
+}

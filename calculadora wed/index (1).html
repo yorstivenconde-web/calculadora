@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="calculadora">
+
+  <div class="pantalla" id="pantalla">
+    <div class="historial" id="historial">0</div>
+    <div class="resultado">
+      <span id="valor">0</span>
+    </div>
+  </div>
+
+  <div class="teclado">
+    <button id="btn-ac" class="btn btn-accion" onclick="borrarTodo()">AC</button>
+    <button id="btn-signo" class="btn btn-accion" onclick="cambiarSigno()">+/-</button>
+    <button id="btn-porcentaje" class="btn btn-accion" onclick="agregarOperador('%')">%</button>
+    <button id="btn-raiz" class="btn btn-accion" onclick="raizCuadrada()">&radic;</button>
+
+    <button id="btn-7" class="btn" onclick="agregarNumero('7')">7</button>
+    <button id="btn-8" class="btn" onclick="agregarNumero('8')">8</button>
+    <button id="btn-9" class="btn" onclick="agregarNumero('9')">9</button>
+    <button id="btn-division" class="btn btn-operador" onclick="agregarOperador('/')">&divide;</button>
+
+    <button id="btn-4" class="btn" onclick="agregarNumero('4')">4</button>
+    <button id="btn-5" class="btn" onclick="agregarNumero('5')">5</button>
+    <button id="btn-6" class="btn" onclick="agregarNumero('6')">6</button>
+    <button id="btn-multiplicacion" class="btn btn-operador" onclick="agregarOperador('*')">x</button>
+
+    <button id="btn-1" class="btn" onclick="agregarNumero('1')">1</button>
+    <button id="btn-2" class="btn" onclick="agregarNumero('2')">2</button>
+    <button id="btn-3" class="btn" onclick="agregarNumero('3')">3</button>
+    <button id="btn-resta" class="btn btn-operador" onclick="agregarOperador('-')">-</button>
+
+    <button id="btn-0" class="btn btn-cero" onclick="agregarNumero('0')">0</button>
+    <button id="btn-punto" class="btn" onclick="agregarPunto()">.</button>
+    <button id="btn-suma" class="btn btn-operador" onclick="agregarOperador('+')">+</button>
+    <button id="btn-cuadrado" class="btn" onclick="elevarAlCuadrado()">x&sup2;</button>
+
+    <button id="btn-log" class="btn" onclick="calcularLog()">log</button>
+    <button id="btn-borrar" class="btn" onclick="borrarUltimo()">&#9003;</button>
+    <button id="btn-igual" class="btn btn-igual" onclick="calcularResultado()">=</button>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
